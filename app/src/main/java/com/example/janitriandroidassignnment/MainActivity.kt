@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
         val showDialog = intent?.getBooleanExtra("SHOW_LOG_DIALOG", false) ?: false
 
 
-        val workRequest = PeriodicWorkRequestBuilder<VitalsReminderWorker>(15, TimeUnit.MINUTES)
+        val workRequest = PeriodicWorkRequestBuilder<VitalsReminderWorker>(5, TimeUnit.HOURS)
             .build()
         WorkManager.getInstance(applicationContext).enqueueUniquePeriodicWork(
             "VitalsReminder",
